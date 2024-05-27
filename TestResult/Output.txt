@@ -1,4 +1,4 @@
-1. Create Employee API:
+API 1. Create Employee API:
 http://localhost:8080/employee-challenge-2024/api/v1
 {
     "name": "Ganesh Shinde",
@@ -6,9 +6,18 @@ http://localhost:8080/employee-challenge-2024/api/v1
     "age": 32
 }
 Http Status = 201
-Response = Successfully! Record has been added.
+{
+    "status": "success",
+    "data": {
+        "name": "Ganesh Shinde",
+        "salary": 9700,
+        "age": 32
+        "id": 1373
+    },
+    "message": "Successfully! Record has been added."
+}
 
-2. Get All Employees
+API 2. Get All Employees
 http://localhost:8080/employee-challenge-2024/api/v1
 [
     {
@@ -192,6 +201,7 @@ http://localhost:8080/employee-challenge-2024/api/v1/3
 
 API 4: Search by Name
 http://localhost:8080/employee-challenge-2024/api/v1/search/Paul Byrd
+200
 [
     {
         "id": 17,
@@ -202,8 +212,8 @@ http://localhost:8080/employee-challenge-2024/api/v1/search/Paul Byrd
     }
 ]
 
-http://localhost:8080/employee-challenge-2024/api/v1/search/Ganesh
 
+http://localhost:8080/employee-challenge-2024/api/v1/search/Ganesh
 404:
 {
     "status": "Not Found",
@@ -212,7 +222,6 @@ http://localhost:8080/employee-challenge-2024/api/v1/search/Ganesh
 }
 
 http://localhost:8080/employee-challenge-2024/api/v1/search/Ashton
-
 200
 [
     {
@@ -224,6 +233,7 @@ http://localhost:8080/employee-challenge-2024/api/v1/search/Ashton
     }
 ]
 
+API 5: Get Top 10 highest earning employee names
 http://localhost:8080/employee-challenge-2024/api/v1/topTenHighestEarningEmployeeNames
 [
     "Paul Byrd",
@@ -238,46 +248,13 @@ http://localhost:8080/employee-challenge-2024/api/v1/topTenHighestEarningEmploye
     "Tiger Nixon"
 ]
 
-
+API 6: Get highest salary
 http://localhost:8080/employee-challenge-2024/api/v1/highestSalary
 
-725000
-
-{
-    "status": "success",
-    "data": {
-        "name": "Snehal Shinde",
-        "salary": 25000,
-        "age": 31,
-        "id": 1373
-    },
-    "message": "Successfully! Record has been added."
-}
+Response: 725000
 
 
 
-http://localhost:8080/employee-challenge-2024/api/v1/topTenHighestEarningEmployeeNames
-[
-    "Paul Byrd",
-    "Yuri Berry",
-    "Charde Marshall",
-    "Cedric Kelly",
-    "Tatyana Fitzpatrick",
-    "Brielle Williamson",
-    "Jenette Caldwell",
-    "Quinn Flynn",
-    "Rhona Davidson",
-    "Tiger Nixon"
-]
 
 
-[
-    {
-        "id": 17,
-        "employee_name": "Paul Byrd",
-        "employee_salary": 725000,
-        "employee_age": 64,
-        "profile_image": ""
-    }
-]
 

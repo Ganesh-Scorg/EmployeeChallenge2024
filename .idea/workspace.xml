@@ -5,20 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7762d27d-2159-4dff-8fc4-016707aea334" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/RqChallengeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/RqChallengeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/employees/IEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/IEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/model/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/repository/EmployeeFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/feignclient/EmployeeFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/rqchallenge/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/rqchallenge/service/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/rqchallenge/service/EmployeeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rqChallenge" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -67,41 +74,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testCreateEmployee.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testCreateEmployee_Fail.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testCreateEmployee_Null.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testDeleteEmployee_Null.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetAllEmployees.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetAllEmployees_NullCheck.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetEmployeesByNameSearch.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetEmployeesByNameSearch_NotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetHighestSalaryOfEmployees_NotFound.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetTopTenHighestEarningEmployeeNames.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.EmployeeServiceTest.testGetTopTenHighestEarningEmployeeNames_NotFound.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [:RqChallengeApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [bootJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [clean build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.java-employee-challenge-2024 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Build java-employee-challenge-2024.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.EmployeeServiceTest.executor": "Run",
+    "Gradle.EmployeeServiceTest.testCreateEmployee.executor": "Run",
+    "Gradle.EmployeeServiceTest.testCreateEmployee_Fail.executor": "Run",
+    "Gradle.EmployeeServiceTest.testCreateEmployee_Null.executor": "Run",
+    "Gradle.EmployeeServiceTest.testDeleteEmployee_Null.executor": "Run",
+    "Gradle.EmployeeServiceTest.testGetAllEmployees.executor": "Run",
+    "Gradle.EmployeeServiceTest.testGetAllEmployees_NullCheck.executor": "Debug",
+    "Gradle.EmployeeServiceTest.testGetEmployeesByNameSearch.executor": "Run",
+    "Gradle.EmployeeServiceTest.testGetEmployeesByNameSearch_NotFound.executor": "Run",
+    "Gradle.EmployeeServiceTest.testGetHighestSalaryOfEmployees_NotFound.executor": "Debug",
+    "Gradle.EmployeeServiceTest.testGetTopTenHighestEarningEmployeeNames.executor": "Run",
+    "Gradle.EmployeeServiceTest.testGetTopTenHighestEarningEmployeeNames_NotFound.executor": "Debug",
+    "Gradle.RqChallengeApplicationTests.executor": "Run",
+    "Gradle.java-employee-challenge-2024 [:RqChallengeApplication.main()].executor": "Run",
+    "Gradle.java-employee-challenge-2024 [bootJar].executor": "Run",
+    "Gradle.java-employee-challenge-2024 [bootRun].executor": "Run",
+    "Gradle.java-employee-challenge-2024 [build].executor": "Run",
+    "Gradle.java-employee-challenge-2024 [clean build].executor": "Run",
+    "Gradle.java-employee-challenge-2024 [clean].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.Unnamed.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Application.RqChallengeApplication">
+}]]></component>
+  <component name="RunManager" selected="Gradle.java-employee-challenge-2024 [clean build]">
     <configuration name="RqChallengeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.rqchallenge.RqChallengeApplication" />
       <module name="rqChallenge.main" />
@@ -139,7 +149,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EmployeeServiceTest.testDeleteEmployee_Null" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RqChallengeApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -152,7 +162,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.rqchallenge.service.EmployeeServiceTest.testDeleteEmployee_Null&quot;" />
+            <option value="&quot;com.example.rqchallenge.RqChallengeApplicationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -230,21 +240,42 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="TestNG" nameIsGenerated="true">
+      <module name="rqChallenge.test" />
+      <shortenClasspath name="NONE" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.RqChallengeApplication" />
       <item itemvalue="Gradle.java-employee-challenge-2024 [clean build]" />
+      <item itemvalue="Gradle.RqChallengeApplicationTests" />
       <item itemvalue="Gradle.EmployeeServiceTest" />
-      <item itemvalue="Gradle.EmployeeServiceTest.testDeleteEmployee_Null" />
       <item itemvalue="Gradle.java-employee-challenge-2024 [build]" />
       <item itemvalue="Gradle.java-employee-challenge-2024 [clean]" />
+      <item itemvalue="TestNG.Unnamed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RqChallengeApplicationTests" />
         <item itemvalue="Gradle.java-employee-challenge-2024 [build]" />
         <item itemvalue="Gradle.java-employee-challenge-2024 [clean]" />
         <item itemvalue="Application.RqChallengeApplication" />
         <item itemvalue="Gradle.EmployeeServiceTest" />
-        <item itemvalue="Gradle.EmployeeServiceTest.testDeleteEmployee_Null" />
       </list>
     </recent_temporary>
   </component>
@@ -264,12 +295,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeController.java</url>
-          <line>57</line>
+          <line>55</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeControllerAdvice.java</url>
-          <line>31</line>
+          <line>33</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -279,12 +310,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/service/EmployeeService.java</url>
-          <line>23</line>
+          <line>22</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/controller/EmployeeControllerAdvice.java</url>
-          <line>24</line>
+          <line>26</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -299,7 +330,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/service/EmployeeService.java</url>
-          <line>76</line>
+          <line>75</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -309,7 +340,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/rqchallenge/service/EmployeeService.java</url>
-          <line>64</line>
+          <line>63</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

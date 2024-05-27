@@ -3,7 +3,7 @@ package com.example.rqchallenge.service;
 import com.example.rqchallenge.exception.EmployeeNotFoundException;
 import com.example.rqchallenge.exception.GenericException;
 import com.example.rqchallenge.model.*;
-import com.example.rqchallenge.repository.EmployeeFeignClient;
+import com.example.rqchallenge.feignclient.EmployeeFeignClient;
 import com.example.rqchallenge.util.Constants;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class EmployeeServiceTest {
 
-    private final static List<Employee> employees = new ArrayList<>();
+    private final static List<Employee> employeeList = new ArrayList<>();
     @Mock
     private RestTemplate restTemplate;
     @InjectMocks
@@ -42,34 +42,34 @@ public class EmployeeServiceTest {
 
     @BeforeAll
     static void loadInitialData() {
-        employees.add(Employee.builder().id(1).employee_name("Snehal").employee_age(32).employee_salary(25000).build());
-        employees.add(Employee.builder().id(2).employee_name("Arun").employee_age(25).employee_salary(12000).build());
-        employees.add(Employee.builder().id(3).employee_name("Sonal").employee_age(28).employee_salary(10000).build());
-        employees.add(Employee.builder().id(4).employee_name("Ajay").employee_age(45).employee_salary(10005).build());
-        employees.add(Employee.builder().id(5).employee_name("Madhukar").employee_age(35).employee_salary(100006).build());
-        employees.add(Employee.builder().id(6).employee_name("Narayan").employee_age(50).employee_salary(10000).build());
-        employees.add(Employee.builder().id(7).employee_name("Prakash").employee_age(39).employee_salary(10001).build());
-        employees.add(Employee.builder().id(8).employee_name("Sanjay").employee_age(42).employee_salary(10002).build());
-        employees.add(Employee.builder().id(9).employee_name("Radha").employee_age(65).employee_salary(10003).build());
-        employees.add(Employee.builder().id(10).employee_name("Sarika").employee_age(41).employee_salary(10004).build());
-        employees.add(Employee.builder().id(11).employee_name("Ajay Kumar").employee_age(45).employee_salary(200000).build());
+        employeeList.add(Employee.builder().id(1).employee_name("Snehal").employee_age(32).employee_salary(25000).build());
+        employeeList.add(Employee.builder().id(2).employee_name("Arun").employee_age(25).employee_salary(12000).build());
+        employeeList.add(Employee.builder().id(3).employee_name("Sonal").employee_age(28).employee_salary(10000).build());
+        employeeList.add(Employee.builder().id(4).employee_name("Ajay").employee_age(45).employee_salary(10005).build());
+        employeeList.add(Employee.builder().id(5).employee_name("Madhukar").employee_age(35).employee_salary(100006).build());
+        employeeList.add(Employee.builder().id(6).employee_name("Narayan").employee_age(50).employee_salary(10000).build());
+        employeeList.add(Employee.builder().id(7).employee_name("Prakash").employee_age(39).employee_salary(10001).build());
+        employeeList.add(Employee.builder().id(8).employee_name("Sanjay").employee_age(42).employee_salary(10002).build());
+        employeeList.add(Employee.builder().id(9).employee_name("Radha").employee_age(65).employee_salary(10003).build());
+        employeeList.add(Employee.builder().id(10).employee_name("Sarika").employee_age(41).employee_salary(10004).build());
+        employeeList.add(Employee.builder().id(11).employee_name("Ajay Kumar").employee_age(45).employee_salary(200000).build());
     }
 
     @BeforeEach
     void setMockitoResults() {
         EmployeeList employeeList = new EmployeeList();
-        employeeList.setData(employees);
+        employeeList.setData(EmployeeServiceTest.employeeList);
         Mockito.when(employeeFeignClient.getAllEmployees()).thenReturn(employeeList);
-        Mockito.when(employeeFeignClient.getEmployeeById("1")).thenReturn(employees.get(0));
+        Mockito.when(employeeFeignClient.getEmployeeById("1")).thenReturn(EmployeeServiceTest.employeeList.get(0));
         Mockito.when(employeeFeignClient.getEmployeeById("50")).thenReturn(null);
     }
 
     @Test
     public void testGetAllEmployees() throws EmployeeNotFoundException {
 
-        List<Employee> allEmployeesList = employeeService.getAllEmployees();
-        assertEquals(allEmployeesList.size(), employees.size());
-        assertEquals(allEmployeesList, employees);
+        List<Employee> allEmployees = employeeService.getAllEmployees();
+        assertEquals(allEmployees.size(), employeeList.size());
+        assertEquals(allEmployees, employeeList);
     }
 
     @Test
@@ -100,8 +100,8 @@ public class EmployeeServiceTest {
 
     @Test
     public void testGetEmployeeById() throws EmployeeNotFoundException {
-        Employee emp = employeeService.getEmployeeById("1");
-        assertEquals(emp, employees.get(0));
+        Employee employee = employeeService.getEmployeeById("1");
+        assertEquals(employee, employeeList.get(0));
     }
 
     @Test
@@ -116,15 +116,15 @@ public class EmployeeServiceTest {
     @Test
     public void testGetHighestSalaryOfEmployees() throws EmployeeNotFoundException {
         Integer highestSalary = employeeService.getHighestSalaryOfEmployees();
-        assertEquals(highestSalary, employees.get(10).getEmployee_salary());
+        assertEquals(highestSalary, employeeList.get(10).getEmployee_salary());
     }
 
     @Test
     public void testGetHighestSalaryOfEmployees_NotFound() {
         List<Employee> emptyEmployeeList = new ArrayList<>();
-        EmployeeList elist = new EmployeeList();
-        elist.setData(emptyEmployeeList);
-        Mockito.when(employeeFeignClient.getAllEmployees()).thenReturn(elist);
+        EmployeeList employeeList = new EmployeeList();
+        employeeList.setData(emptyEmployeeList);
+        Mockito.when(employeeFeignClient.getAllEmployees()).thenReturn(employeeList);
         Exception exception = assertThrows(EmployeeNotFoundException.class, () -> {
             employeeService.getHighestSalaryOfEmployees();
         });
@@ -140,7 +140,7 @@ public class EmployeeServiceTest {
     }
 
     private static List<String> getHighlyPaidEmployeeForTest() {
-        return employees.stream()
+        return employeeList.stream()
                 .sorted(Collections.reverseOrder(Comparator.comparingInt(Employee::getEmployee_salary)))
                 .map(Employee::getEmployee_name).limit(10).collect(Collectors.toList());
     }
@@ -148,9 +148,9 @@ public class EmployeeServiceTest {
     @Test
     public void testGetTopTenHighestEarningEmployeeNames_NotFound() {
         List<Employee> emptyEmployeeList = new ArrayList<>();
-        EmployeeList elist = new EmployeeList();
-        elist.setData(emptyEmployeeList);
-        Mockito.when(employeeFeignClient.getAllEmployees()).thenReturn(elist);
+        EmployeeList employeeList = new EmployeeList();
+        employeeList.setData(emptyEmployeeList);
+        Mockito.when(employeeFeignClient.getAllEmployees()).thenReturn(employeeList);
         Exception exception = assertThrows(EmployeeNotFoundException.class, () -> {
             employeeService.getTopTenHighestEarningEmployeeNames();
         });
@@ -161,9 +161,9 @@ public class EmployeeServiceTest {
     @Test
     public void testCreateEmployee() throws GenericException {
         EmployeeInput newInput = EmployeeInput.builder().name("Shinde").salary("970000").age("45").build();
-        EmployeeInput newEmp = EmployeeInput.builder().id("12").name("Shinde").salary("970000").age("45").build();
+        EmployeeInput newEmployee = EmployeeInput.builder().id("12").name("Shinde").salary("970000").age("45").build();
         EmployeeResponse expectedResp = new EmployeeResponse();
-        expectedResp.setData(newEmp);
+        expectedResp.setData(newEmployee);
         expectedResp.setStatus(Constants.SUCCESS);
         expectedResp.setMessage("Successfully! Record has been added.");
 
@@ -233,6 +233,5 @@ public class EmployeeServiceTest {
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains("Null Response from Server"));
     }
-
 
 }

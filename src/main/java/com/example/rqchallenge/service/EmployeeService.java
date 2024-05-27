@@ -3,7 +3,7 @@ package com.example.rqchallenge.service;
 import com.example.rqchallenge.exception.EmployeeNotFoundException;
 import com.example.rqchallenge.exception.GenericException;
 import com.example.rqchallenge.model.*;
-import com.example.rqchallenge.repository.EmployeeFeignClient;
+import com.example.rqchallenge.feignclient.EmployeeFeignClient;
 import com.example.rqchallenge.util.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,25 +20,25 @@ public class EmployeeService {
     public EmployeeFeignClient employeeFeignClient;
 
     public List<Employee> getAllEmployees() throws EmployeeNotFoundException {
-
-        List<Employee> all_employee = fetchAllEmployees();
-
-        if (all_employee.isEmpty()) {
+        List<Employee> allEmployee = fetchAllEmployees();
+        log.info("getAllEmployees = {}", allEmployee);
+        if (allEmployee.isEmpty()) {
+            //handle custom exception to return status code as 404
             throw new EmployeeNotFoundException(Constants.STATUS_404);
         }
-        return all_employee;
+        return allEmployee;
     }
 
     public List<Employee> fetchAllEmployees() {
-        EmployeeList all_employee = employeeFeignClient.getAllEmployees();
-        log.info("fetchAllEmployees = {}", all_employee);
-        return all_employee != null? all_employee.getData() : new ArrayList<>();
+        EmployeeList allEmployee = employeeFeignClient.getAllEmployees();
+        log.info("fetchAllEmployees = {}", allEmployee);
+        return allEmployee != null ? allEmployee.getData() : new ArrayList<>();
     }
 
 
     public List<Employee> getEmployeesByNameSearch(String searchString) throws EmployeeNotFoundException {
-        List<Employee> all_employee = fetchAllEmployees();
-        List<Employee> filteredList = all_employee.stream().filter(e -> e.getEmployee_name().contains(searchString)).collect(Collectors.toList());
+        List<Employee> allEmployee = fetchAllEmployees();
+        List<Employee> filteredList = allEmployee.stream().filter(e -> e.getEmployee_name().contains(searchString)).collect(Collectors.toList());
         log.info("filteredList = {}", filteredList);
 
         if (filteredList.isEmpty()) {
@@ -52,18 +52,17 @@ public class EmployeeService {
     public Employee getEmployeeById(String id) throws EmployeeNotFoundException {
 
         Employee employee = employeeFeignClient.getEmployeeById(id);
-
+        log.info("Employee found = {}", employee);
         if (employee == null) {
             //handle custom exception to return status code as 404
             throw new EmployeeNotFoundException(Constants.STATUS_404);
         }
-        log.info("Employee found = {}", employee);
         return employee;
     }
 
     public Integer getHighestSalaryOfEmployees() throws EmployeeNotFoundException {
-        List<Employee> all_employee = fetchAllEmployees();
-        Optional<Employee> highestSalary = all_employee.stream().max(Comparator.comparingInt(Employee::getEmployee_salary));
+        List<Employee> allEmployee = fetchAllEmployees();
+        Optional<Employee> highestSalary = allEmployee.stream().max(Comparator.comparingInt(Employee::getEmployee_salary));
         log.info("highestSalary = {}", highestSalary);
 
         if (highestSalary.isEmpty()) {
@@ -74,9 +73,9 @@ public class EmployeeService {
     }
 
     public List<String> getTopTenHighestEarningEmployeeNames() throws EmployeeNotFoundException {
-        List<Employee> all_employee = fetchAllEmployees();
+        List<Employee> allEmployee = fetchAllEmployees();
 
-        List<String> highestSalaryEmployeeNames = all_employee.stream()
+        List<String> highestSalaryEmployeeNames = allEmployee.stream()
                 .sorted(Collections.reverseOrder(Comparator.comparingInt(Employee::getEmployee_salary)))
                 .map(Employee::getEmployee_name).limit(10).collect(Collectors.toList());
 
@@ -91,13 +90,13 @@ public class EmployeeService {
 
 
     public EmployeeResponse createEmployee(EmployeeInput employeeInput) throws GenericException {
-        EmployeeResponse newemployee = employeeFeignClient.createEmployee(employeeInput);
-        if (newemployee != null) {
-            if (newemployee.getStatus().equals("success")) {
-                log.info("Newly created employee = {}", newemployee.getData());
-                return newemployee;
+        EmployeeResponse newEmployee = employeeFeignClient.createEmployee(employeeInput);
+        if (newEmployee != null) {
+            if (newEmployee.getStatus().equals("success")) {
+                log.info("Newly created employee = {}", newEmployee.getData());
+                return newEmployee;
             } else {
-                throw new GenericException(new ResponseData(newemployee.getStatus(), newemployee.getMessage(), null));
+                throw new GenericException(new ResponseData(newEmployee.getStatus(), newEmployee.getMessage(), null));
             }
         } else {
             throw new GenericException(new ResponseData(Constants.STATUS_UNKNOWN, Constants.MSG_UNKNOWN, null));

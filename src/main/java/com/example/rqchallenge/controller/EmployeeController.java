@@ -24,8 +24,8 @@ public class EmployeeController implements IEmployeeController {
 
     @Override
     public ResponseEntity<List<Employee>> getAllEmployees() throws IOException, EmployeeNotFoundException {
-        List<Employee> elist = employeeService.getAllEmployees();
-        return new ResponseEntity<>(elist, HttpStatus.OK);
+        List<Employee> employeelist = employeeService.getAllEmployees();
+        return new ResponseEntity<>(employeelist, HttpStatus.OK);
     }
 
     @Override
@@ -36,8 +36,8 @@ public class EmployeeController implements IEmployeeController {
 
     @Override
     public ResponseEntity<Employee> getEmployeeById(String id) throws EmployeeNotFoundException {
-        Employee emp = employeeService.getEmployeeById(id);
-        return new ResponseEntity<>(emp, HttpStatus.OK);
+        Employee employee = employeeService.getEmployeeById(id);
+        return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
     @Override
@@ -45,12 +45,10 @@ public class EmployeeController implements IEmployeeController {
         return new ResponseEntity<>(employeeService.getHighestSalaryOfEmployees(), HttpStatus.OK);
     }
 
-    //mockserver, unittest wiremock
-
     @Override
     public ResponseEntity<List<String>> getTopTenHighestEarningEmployeeNames() throws EmployeeNotFoundException {
-        List<String> highestEarningEmployess = employeeService.getTopTenHighestEarningEmployeeNames();
-        return new ResponseEntity<>(highestEarningEmployess, HttpStatus.OK);
+        List<String> highestEarningEmployees = employeeService.getTopTenHighestEarningEmployeeNames();
+        return new ResponseEntity<>(highestEarningEmployees, HttpStatus.OK);
     }
 
     @Override

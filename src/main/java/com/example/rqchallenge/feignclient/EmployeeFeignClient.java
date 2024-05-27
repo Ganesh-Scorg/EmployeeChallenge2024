@@ -1,4 +1,4 @@
-package com.example.rqchallenge.repository;
+package com.example.rqchallenge.feignclient;
 
 import com.example.rqchallenge.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
